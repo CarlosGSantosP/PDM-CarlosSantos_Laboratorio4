@@ -13,6 +13,7 @@ import com.laboratorio4_arquitecturamvvm.laboratorio4Arquitecturamvvm.ui.theme.L
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.laboratorio4_arquitecturamvvm.laboratorio4Arquitecturamvvm.Navigation.Nav
 import com.laboratorio4_arquitecturamvvm.laboratorio4Arquitecturamvvm.ViewModel.GeneralViewModel
 
 class MainActivity : ComponentActivity() {
@@ -21,14 +22,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
 
-            val navController = rememberNavController()
-
-            val viewModel: GeneralViewModel = viewModel()
-
-            NavHost(navController = navController, startDestination = "todo_screen") {
-                composable("todo_screen") {
-                    TODOScreen(viewModel = viewModel)
-                }
+            Laboratorio4ArquitecturaMVVMTheme {
+                Nav()
             }
         }
     }
